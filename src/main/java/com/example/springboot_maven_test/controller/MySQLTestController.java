@@ -14,17 +14,17 @@ import javax.sql.DataSource;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:8081")
-public class MySQLtestController {
+public class MySQLTestController {
 
     private final DataSource dataSource; // 注入数据源
 
     @Autowired
-    public MySQLtestController(DataSource dataSource) {
+    public MySQLTestController(DataSource dataSource) {
         this.dataSource = dataSource;
     }
 
     @GetMapping("/getUser")
-    public List<List<String>> getInittestData() {
+    public List<List<String>> getInitTestData() {
         List<List<String>> result = new ArrayList<>();
         try (Connection connection = dataSource.getConnection()) {
             Statement statement = connection.createStatement();
