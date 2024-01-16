@@ -16,8 +16,12 @@ import javax.sql.DataSource;
 @CrossOrigin(origins = "http://localhost:8081")
 public class MySQLtestController {
 
+    private final DataSource dataSource; // 注入数据源
+
     @Autowired
-    private DataSource dataSource; // 注入数据源
+    public MySQLtestController(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
 
     @GetMapping("/getUser")
     public List<List<String>> getInittestData() {
