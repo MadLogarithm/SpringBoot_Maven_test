@@ -1,6 +1,7 @@
 package com.example.springboot_maven_test.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.sql.Connection;
@@ -12,6 +13,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:8081")
 public class MySQLtestController {
 
     @Autowired
