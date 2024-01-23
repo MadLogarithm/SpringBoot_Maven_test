@@ -9,4 +9,7 @@
     <select id="selectUserById" resultType="com.example.springboot_maven_test.model.User">
         select * from user where id = #{id}
     </select>
+    <insert id="insertUser" parameterType="com.example.springboot_maven_test.model.User">
+        insert into user values (#{id}, #{name}, #{age})
+    </insert>
 </mapper>

@@ -30,4 +30,10 @@ public class UserController {
         userList.add(user);
         return userList;
     }
+
+    @PostMapping("/user")
+    public String addUser(@RequestBody User user) {
+        userMapper.insertUser(user);
+        return "User added successfully";
+    }
 }
