@@ -10,4 +10,6 @@ public interface UserMapper {
     List<User> selectAllUser();
     User selectUserById(int id);
     void insertUser(User user);
+    void deleteUserById(int id);
+    void updateUser(User user);
 }

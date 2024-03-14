@@ -12,4 +12,10 @@
     <insert id="insertUser" parameterType="com.example.springboot_maven_test.model.User">
         insert into user values (#{id}, #{name}, #{age})
     </insert>
+    <delete id="deleteUserById" parameterType="int">
+        delete from user where id = #{id}
+    </delete>
+    <update id="updateUser" parameterType="com.example.springboot_maven_test.model.User">
+        update user set name = #{name}, age = #{age} where id = #{id}
+    </update>
 </mapper>

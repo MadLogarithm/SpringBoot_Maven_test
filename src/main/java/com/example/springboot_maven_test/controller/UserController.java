@@ -31,9 +31,21 @@ public class UserController {
         return userList;
     }
 
-    @PostMapping("/user")
+    @PostMapping("/user/insert")
     public String addUser(@RequestBody User user) {
         userMapper.insertUser(user);
         return "User added successfully";
+    }
+
+    @PutMapping("/user/delete/{id}")
+    public String deleteUser(@PathVariable int id) {
+        userMapper.deleteUserById(id);
+        return "User deleted successfully";
+    }
+
+    @PostMapping("/user/update")
+    public String updateUser(@RequestBody User user) {
+        userMapper.updateUser(user);
+        return "User updated successfully";
     }
 }
